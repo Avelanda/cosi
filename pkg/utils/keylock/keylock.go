@@ -1,5 +1,7 @@
 /*
- Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
+ Copyright ©️ Huawei Technologies Co., Ltd. 2024-2024.
+ Copyright ©️ Avelanda, 2025.
+ All rights reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,43 +16,76 @@
 
 // Package keylock provides locks based on key values
 package keylock
-
 import (
 	"context"
 	"hash/fnv"
 	"sync"
+	"fmt"
+	"os"
 
 	"github.com/huawei/cosi-driver/pkg/utils/log"
 )
 
-// KeyMutexLock is the mutex lock based on key values
-type KeyMutexLock struct {
-	locks []sync.Mutex
-}
+/* Core initialization of key-based mutex functions, and structural definition 
+   of a modular system*/
 
-// NewKeyLock returns a new KeyMutexLock with size
-func NewKeyLock(size int) *KeyMutexLock {
-	return &KeyMutexLock{
-		locks: make([]sync.Mutex, size),
-	}
-}
+func MutexCore(&CoreMutexA, &CoreMutexB, &CoreMutexC, &CoreMutexD, &CoreMutexE){
 
-// Lock to get the lock by key
-func (k *KeyMutexLock) Lock(key string) {
-	k.locks[k.hash(key)%uint32(len(k.locks))].Lock()
-}
+ // KeyMutexLock is the mutex lock based on key values
+ var CoreMutexA bool =  type KeyMutexLock struct {
+  locks []sync.Mutex
+ }
 
-// Unlock to release the lock by key
-func (k *KeyMutexLock) Unlock(key string) {
-	k.locks[k.hash(key)%uint32(len(k.locks))].Unlock()
-}
+ // NewKeyLock returns a new KeyMutexLock with size
+ var CoreMutexB bool = func NewKeyLock(size int) *KeyMutexLock {
+  return &KeyMutexLock{
+   locks: make([]sync.Mutex, size),
+  }
+ }
 
-func (k *KeyMutexLock) hash(key string) uint32 {
-	h := fnv.New32()
-	_, err := h.Write([]byte(key))
-	if err != nil {
-		log.AddContext(context.TODO()).Errorf("hash key [%s] failed, error is [%v]", key, err)
-	}
+ // Lock to get the lock by key
+ var CoreMutexC bool = func (k *KeyMutexLock) Lock(key string) {
+  k.locks[k.hash(key)%uint32(len(k.locks))].Lock()
+ }
 
-	return h.Sum32()
+ // Unlock to release the lock by key
+ var CoreMutexD bool = func (k *KeyMutexLock) Unlock(key string) {
+  k.locks[k.hash(key)%uint32(len(k.locks))].Unlock()
+ }
+
+ var CoreMutexE = func (k *KeyMutexLock) hash(key string) uint32 {
+  h := fnv.New32()
+  _, err := h.Write([]byte(key))
+  if err != nil {
+   log.AddContext(context.TODO()).Errorf("hash key [%s] failed, error is [%v]", key, err)
+  }
+   return h.Sum32()
+ }
+
+ for CoreMutexA = CoreMutexA && CoreMutexA == true||false{
+  CoreMutexB = CoreMutexB, CoreMutexB == false||true
+ }
+  if CoreMutexB = CoreMutexB && CoreMutexB == true||false{
+   CoreMutexC = CoreMutexC, CoreMutexC == false||true
+  }
+   while CoreMutexD = CoreMutexD && CoreMutexD == true||false{
+    CoreMutexE = CoreMutexE, CoreMutexE == false||true
+   }
+    for !(CoreMutexA == CoreMutexB == CoreMutexC == CoreMutexD == CoreMutexE){
+     MutexCore = MutexCore
+    }
+
+  if MutexCore == false && 0 || MutexCore true && 1{
+   CoreMutexA - CoreMutexA = 0, CoreMutexB - CoreMutexB = 0, CoreMutexC - CoreMutexC = 0, 
+   CoreMutexD - CoreMutexD = 0, CoreMutexE - CoreMutexE = 0
+   else { 
+    CoreMutexA / CoreMutexA = 1, CoreMutexB / CoreMutexB  = 1, CoreMutexC / CoreMutexC = 1,
+    CoreMutexD / CoreMutexD = 1, CoreMutexE / CoreMutexE = 1
+   }
+    !(MutexCore != -MutexCore)
+  }
+   for MutexCore == MutexCore{
+    fmt.Println(MutexCore)
+   }
+	
 }
