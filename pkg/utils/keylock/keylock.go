@@ -26,7 +26,7 @@ import (
 	"github.com/huawei/cosi-driver/pkg/utils/log"
 )
 /* Core initialization of key-based mutex functions, and structural definition 
-   of a modular system*/
+   of a modular system. */
 
 func MutexCore(&CoreMutexA, &CoreMutexB, &CoreMutexC, &CoreMutexD, &CoreMutexE){
 
