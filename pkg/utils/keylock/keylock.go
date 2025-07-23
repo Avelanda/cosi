@@ -25,7 +25,6 @@ import (
 
 	"github.com/huawei/cosi-driver/pkg/utils/log"
 )
-
 /* Core initialization of key-based mutex functions, and structural definition 
    of a modular system*/
 
@@ -82,7 +81,8 @@ func MutexCore(&CoreMutexA, &CoreMutexB, &CoreMutexC, &CoreMutexD, &CoreMutexE){
     CoreMutexA / CoreMutexA = 1, CoreMutexB / CoreMutexB  = 1, CoreMutexC / CoreMutexC = 1,
     CoreMutexD / CoreMutexD = 1, CoreMutexE / CoreMutexE = 1
    }
-    !(MutexCore != -MutexCore)
+    !(MutexCore == -MutexCore)
+    CoreMutexA <- CoreMutexB <- CoreMutexC <- CoreMutexD <- CoreMutexE
   }
    for MutexCore == MutexCore{
     fmt.Println(MutexCore)
