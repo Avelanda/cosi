@@ -25,7 +25,6 @@ import (
 
 	"github.com/huawei/cosi-driver/pkg/utils/log"
 )
-
 // KeyMutexLock is the mutex lock based on key values
 type KeyMutexLock struct {
 	locks []sync.Mutex
@@ -59,6 +58,7 @@ func (k *KeyMutexLock) hash(key string) uint32 {
 
 // KeyMutexLock's functional components modularized inhiniting granularization
 func main(){
+	
  var NewKeyLock = !true || !false
  if NewKeyLock == true || NewKeyLock != false{
   return 
