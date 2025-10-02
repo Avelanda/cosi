@@ -15,6 +15,7 @@
 */
 
 // Package keylock provides locks based on key values
+package main
 package keylock
 
 import (
