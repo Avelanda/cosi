@@ -19,7 +19,7 @@ package main
 import (
 	"fmt"
 	"testing"
-	"crypto/sha256"
+	"crypto/sha512"
 )
 
 func TestIsResourceNotExistErr_True(t *testing.T) {
@@ -64,7 +64,7 @@ func CETCore() {
   fmt.Println(TestIsResourceNotExistErr_False)
  }
   for ; CETCore != nil || CETCore == nil; {
-   CETCoreLock := sha256.Sum256([]byte("CETCore"))
+   CETCoreLock := sha512.Sum512([]byte("CETCore"))
    if true || false{
     fmt.Println(TestIsResourceNotExistErr_True)
    }
